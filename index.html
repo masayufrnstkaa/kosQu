@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -16,6 +15,34 @@
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <style>
+        .custom-popup {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        
+        .custom-popup-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .custom-popup button {
+            min-width: 100px;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -55,6 +82,17 @@
             </div>
         </div>
     </header>
+
+    <!-- Deskripsi singkat KostQu -->
+    <section class="py-4 bg-white text-center">
+        <div class="container">
+            <h2 class="fw-bold mb-2">Selamat Datang di KostQu</h2>
+            <p class="text-secondary" style="max-width: 700px; margin: 0 auto;">
+                KostQu adalah platform digital yang memudahkan Anda menemukan dan <strong>memasarkan kosan</strong> terbaik di kota Anda. Temukan kost nyaman, strategis, dan lengkap dalam satu klik!
+            </p>
+        </div>
+    </section>
+
     <div class="main-banner">
         <div class="owl-carousel owl-banner">
             <div class="item item-1">
@@ -81,17 +119,13 @@
     <div class="featured section py-5 bg-light">
         <div class="container">
             <div class="row">
-                <!-- Gambar -->
-                <!-- <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 d-flex justify-content-center">
-                    <img src="assets/images/kamar1.jpg" class="img-fluid rounded shadow" alt="Kamar Kost" style="border-radius: 20px;">
-                </div> -->
+                <!-- Video -->
                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 d-flex justify-content-center">
                     <video class="img-fluid rounded shadow" style="border-radius: 20px;" controls>
                         <source src="assets/images/videokost1.mp4" type="video/mp4">
                         Browser Anda tidak mendukung tag video.
                     </video>
                 </div>
-
 
                 <!-- Keterangan -->
                 <div class="col-lg-5 col-md-12 mb-4 mb-lg-0 d-flex flex-column justify-content-center">
@@ -148,6 +182,7 @@
                                         <li>Masjid di depan dan belakang kost</li>
                                         <li>Minimarket (Alfamart, Indomaret)</li>
                                         <li>Apotek, kuliner, laundry</li>
+                                        <li><strong>Dekat dengan pusat kuliner populer</strong> seperti Warung Bu Kris, Mie Gacoan, dan Warkop 24 jam</li>
                                     </ul>
                                 </div>
                             </div>
@@ -309,32 +344,30 @@
                 </div>
             </div>
 
-            <section class="advertise-contact-mini py-3" style="background-color: #f5f5f5;">
-                <div class="container text-center">
-                    <h5 class="fw-semibold mb-2" style="color: #333;">
-                        Iklankan Kosanmu di KostQu!
-                    </h5>
-                    <p class="mb-3 text-secondary" style="font-size: 0.9rem; max-width: 320px; margin: 0 auto;">
-                        Mudah & cepat dapat penyewa. Hubungi Admin kami sekarang!
-                    </p>
+            <div class="text-center mt-4">
+                <button class="btn btn-warning" id="contactAdminBtn">
+          Ingin Pasang Iklan Kosan Anda?
+        </button>
+            </div>
 
-                    <a href="https://wa.me/6282121214487?text=Halo%20Admin%2C%20saya%20ingin%20mengiklankan%20kosan%20saya.%20Bagaimana%20prosedurnya%3F" target="_blank" class="text-decoration-none d-inline-flex align-items-center justify-content-center p-2 bg-white rounded shadow-sm border border-gray"
-                        style="max-width: 280px; margin: 0 auto; transition: box-shadow 0.3s ease;">
-                        <img src="assets/images/phone-icon.png" alt="Phone Icon" style="max-width: 36px; margin-right: 10px;">
-                        <div class="text-start">
-                            <div style="color: #1e1e1e; font-weight: 600; font-size: 1rem;">0821 2121 4487</div>
-                            <small class="text-muted" style="font-size: 0.75rem;">Admin KostQu</small>
-                        </div>
-                    </a>
+            <!-- Custom Popup -->
+            <div id="customPopup" class="custom-popup">
+                <div class="custom-popup-content">
+                    <p>Apakah Anda ingin memasarkan kosan Anda? Jika ya, Anda akan diarahkan ke WhatsApp Admin.</p>
+                    <div class="text-center mt-4">
+                        <button class="btn btn-success me-2" id="popupYes">Ya, lanjutkan</button>
+                        <button class="btn btn-secondary" id="popupNo">Batal</button>
+                    </div>
                 </div>
-            </section>
-
+            </div>
         </div>
+    </div>
+
+    </div>
     </div>
     <footer>
         <div class="container">
-            <div class="col-lg-12 text-center">
-            </div>
+            <p class="mb-0">© 2025 KostQu. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -344,6 +377,33 @@
     <script src="assets/js/owl-carousel.js"></script>
     <script src="assets/js/counter.js"></script>
     <script src="assets/js/custom.js"></script>
+
+    <script>
+        const popup = document.getElementById("customPopup");
+        const btnOpen = document.getElementById("contactAdminBtn");
+        const btnYes = document.getElementById("popupYes");
+        const btnNo = document.getElementById("popupNo");
+
+        btnOpen.addEventListener("click", function(e) {
+            e.preventDefault();
+            popup.style.display = "block";
+        });
+
+        btnYes.addEventListener("click", function() {
+            window.open("https://wa.me/6282121214487?text=Halo%20Admin%2C%20saya%20ingin%20mengiklankan%20kosan%20saya.%20Bagaimana%20prosedurnya%3F", "_blank");
+            popup.style.display = "none";
+        });
+
+        btnNo.addEventListener("click", function() {
+            popup.style.display = "none";
+        });
+
+        window.addEventListener("click", function(e) {
+            if (e.target == popup) {
+                popup.style.display = "none";
+            }
+        });
+    </script>
 
 </body>
 
