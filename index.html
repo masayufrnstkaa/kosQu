@@ -119,13 +119,43 @@
     <div class="featured section py-5 bg-light">
         <div class="container">
             <div class="row">
-                <!-- Video -->
+                <!-- Video Carousel -->
                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 d-flex justify-content-center">
-                    <video class="img-fluid rounded shadow" style="border-radius: 20px;" controls>
+                    <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel" style="width: 100%;">
+                        <div class="carousel-inner rounded shadow">
+
+                            <div class="carousel-item active">
+                                <div class="ratio ratio-16x9">
+                                    <video controls>
                         <source src="assets/images/videokost1.mp4" type="video/mp4">
                         Browser Anda tidak mendukung tag video.
                     </video>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="ratio ratio-16x9">
+                                    <video controls>
+                        <source src="assets/images/videokost2.mp4" type="video/mp4">
+                        Browser Anda tidak mendukung tag video.
+                    </video>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Tombol Navigasi Carousel -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Sebelumnya</span>
+        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Berikutnya</span>
+        </button>
+                    </div>
                 </div>
+
 
                 <!-- Keterangan -->
                 <div class="col-lg-5 col-md-12 mb-4 mb-lg-0 d-flex flex-column justify-content-center">
